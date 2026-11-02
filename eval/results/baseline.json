@@ -1,0 +1,1143 @@
+{
+  "config": {
+    "chunk_size": 1000,
+    "chunk_overlap": 150,
+    "embedding_model": "intfloat/multilingual-e5-base",
+    "top_k": 5
+  },
+  "metrics": {
+    "hit@1": 0.47619047619047616,
+    "hit@3": 0.5714285714285714,
+    "hit@5": 0.6666666666666666,
+    "mrr": 0.5428571428571429,
+    "n_answerable": 21,
+    "n_unanswerable": 4,
+    "mean_best_score_answerable": 0.861824597631182,
+    "mean_best_score_unanswerable": 0.857295423746109
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "question": "Sous Windows 10, c'est quoi le mode sécurisé virtuel et en quoi est-il séparé du système que l'utilisateur manipule au quotidien ?",
+      "expected_doc_id": "windows10_vbs",
+      "expected_pages": [
+        8
+      ],
+      "answerable": true,
+      "rank": 5,
+      "ranks": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "best_score": 0.868011474609375,
+      "retrieved": [
+        {
+          "doc_id": "windows10_vbs",
+          "page": 6,
+          "score": 0.868
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 6,
+          "score": 0.8617
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 6,
+          "score": 0.8552
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 4,
+          "score": 0.8473
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 8,
+          "score": 0.8438
+        }
+      ]
+    },
+    {
+      "id": "q02",
+      "question": "Comment déployer la protection par hyperviseur sur mes postes Windows 10, et que faut-il activer au boot pour qu'elle serve vraiment à quelque chose ?",
+      "expected_doc_id": "windows10_vbs",
+      "expected_pages": [
+        12,
+        13
+      ],
+      "answerable": true,
+      "rank": 1,
+      "ranks": [
+        true,
+        false,
+        true,
+        false,
+        false
+      ],
+      "best_score": 0.8657357692718506,
+      "retrieved": [
+        {
+          "doc_id": "windows10_vbs",
+          "page": 13,
+          "score": 0.8657
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 14,
+          "score": 0.8633
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 13,
+          "score": 0.8578
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 5,
+          "score": 0.8576
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 32,
+          "score": 0.8542
+        }
+      ]
+    },
+    {
+      "id": "q03",
+      "question": "Quelle différence entre CCI et HVCI dans Device Guard ? Est-ce que l'une des deux peut se passer de virtualisation ?",
+      "expected_doc_id": "windows10_vbs",
+      "expected_pages": [
+        17,
+        18
+      ],
+      "answerable": true,
+      "rank": null,
+      "ranks": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.884358823299408,
+      "retrieved": [
+        {
+          "doc_id": "windows10_vbs",
+          "page": 15,
+          "score": 0.8844
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 19,
+          "score": 0.8754
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 19,
+          "score": 0.8712
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 4,
+          "score": 0.8675
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 16,
+          "score": 0.8627
+        }
+      ]
+    },
+    {
+      "id": "q04",
+      "question": "Quelle version minimale du firmware UEFI faut-il pour faire tourner Credential Guard ?",
+      "expected_doc_id": "windows10_vbs",
+      "expected_pages": [
+        27
+      ],
+      "answerable": true,
+      "rank": null,
+      "ranks": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.8883594274520874,
+      "retrieved": [
+        {
+          "doc_id": "windows10_vbs",
+          "page": 26,
+          "score": 0.8884
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 26,
+          "score": 0.8846
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 50,
+          "score": 0.8759
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 46,
+          "score": 0.871
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 15,
+          "score": 0.8706
+        }
+      ]
+    },
+    {
+      "id": "q05",
+      "question": "Quelles exigences matérielles supplémentaires Windows 11 impose-t-il pour Credential Guard par rapport à Windows 10 ?",
+      "expected_doc_id": null,
+      "expected_pages": [],
+      "answerable": false,
+      "rank": null,
+      "ranks": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.8876813650131226,
+      "retrieved": [
+        {
+          "doc_id": "windows10_vbs",
+          "page": 52,
+          "score": 0.8877
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 29,
+          "score": 0.8848
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 27,
+          "score": 0.8816
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 15,
+          "score": 0.8726
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 24,
+          "score": 0.8722
+        }
+      ]
+    },
+    {
+      "id": "q06",
+      "question": "Pourquoi est-ce si difficile de patcher les machines d'une usine par rapport à un parc bureautique classique ?",
+      "expected_doc_id": "systemes_industriels",
+      "expected_pages": [
+        17
+      ],
+      "answerable": true,
+      "rank": 1,
+      "ranks": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.8427987694740295,
+      "retrieved": [
+        {
+          "doc_id": "systemes_industriels",
+          "page": 17,
+          "score": 0.8428
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 42,
+          "score": 0.8396
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 15,
+          "score": 0.8361
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 5,
+          "score": 0.835
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 20,
+          "score": 0.834
+        }
+      ]
+    },
+    {
+      "id": "q07",
+      "question": "Modbus n'a aucune sécurité native et je ne peux pas le remplacer : comment protéger ces échanges sur mon réseau d'atelier ?",
+      "expected_doc_id": "systemes_industriels",
+      "expected_pages": [
+        82
+      ],
+      "answerable": true,
+      "rank": 2,
+      "ranks": [
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.8531493544578552,
+      "retrieved": [
+        {
+          "doc_id": "systemes_industriels",
+          "page": 22,
+          "score": 0.8531
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 82,
+          "score": 0.8462
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 20,
+          "score": 0.845
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 20,
+          "score": 0.8445
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 59,
+          "score": 0.8431
+        }
+      ]
+    },
+    {
+      "id": "q08",
+      "question": "Quel port dois-je ouvrir sur le pare-feu pour laisser passer du Modbus entre deux zones ?",
+      "expected_doc_id": "systemes_industriels",
+      "expected_pages": [
+        66
+      ],
+      "answerable": true,
+      "rank": 5,
+      "ranks": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "best_score": 0.8464567065238953,
+      "retrieved": [
+        {
+          "doc_id": "systemes_industriels",
+          "page": 62,
+          "score": 0.8465
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 62,
+          "score": 0.845
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 36,
+          "score": 0.8437
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 35,
+          "score": 0.8329
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 66,
+          "score": 0.8316
+        }
+      ]
+    },
+    {
+      "id": "q09",
+      "question": "Quels numéros de recommandation couvrent la séparation du réseau d'admin et l'usage exclusif des machines d'admin sur un site industriel ? Ces machines peuvent-elles aller sur Internet ?",
+      "expected_doc_id": "systemes_industriels",
+      "expected_pages": [
+        67
+      ],
+      "answerable": true,
+      "rank": null,
+      "ranks": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.872137188911438,
+      "retrieved": [
+        {
+          "doc_id": "systemes_industriels",
+          "page": 73,
+          "score": 0.8721
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 73,
+          "score": 0.8664
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 109,
+          "score": 0.8601
+        },
+        {
+          "doc_id": "hygiene_informatique",
+          "page": 69,
+          "score": 0.8528
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 72,
+          "score": 0.8524
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "Comment écrire des NetworkPolicy Kubernetes pour isoler les pods d'un cluster qui pilote des automates ?",
+      "expected_doc_id": null,
+      "expected_pages": [],
+      "answerable": false,
+      "rank": null,
+      "ranks": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.8392090797424316,
+      "retrieved": [
+        {
+          "doc_id": "systemes_industriels",
+          "page": 85,
+          "score": 0.8392
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 32,
+          "score": 0.8383
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 28,
+          "score": 0.8378
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 85,
+          "score": 0.8378
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 82,
+          "score": 0.8374
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "question": "D'après l'II 901, à partir de quand une donnée est-elle considérée comme sensible ?",
+      "expected_doc_id": "architectures_si_sensibles",
+      "expected_pages": [
+        9
+      ],
+      "answerable": true,
+      "rank": null,
+      "ranks": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.8668422102928162,
+      "retrieved": [
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 17,
+          "score": 0.8668
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 32,
+          "score": 0.8636
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 90,
+          "score": 0.854
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 6,
+          "score": 0.8539
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 92,
+          "score": 0.8539
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "question": "Dans quels cas vaut-il mieux couper totalement un SI de classe 2 du reste du monde, et quels problèmes d'exploitation faut-il anticiper ?",
+      "expected_doc_id": "architectures_si_sensibles",
+      "expected_pages": [
+        23
+      ],
+      "answerable": true,
+      "rank": 1,
+      "ranks": [
+        true,
+        true,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.8574293851852417,
+      "retrieved": [
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 23,
+          "score": 0.8574
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 23,
+          "score": 0.8488
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 4,
+          "score": 0.8488
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 46,
+          "score": 0.8464
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 13,
+          "score": 0.8457
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "question": "À quel rythme minimum faut-il repasser sur les droits des comptes d'un SI sensible, et qui doit s'en occuper ?",
+      "expected_doc_id": "architectures_si_sensibles",
+      "expected_pages": [
+        57
+      ],
+      "answerable": true,
+      "rank": 1,
+      "ranks": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.8495381474494934,
+      "retrieved": [
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 57,
+          "score": 0.8495
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 79,
+          "score": 0.8333
+        },
+        {
+          "doc_id": "hygiene_informatique",
+          "page": 16,
+          "score": 0.8329
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 49,
+          "score": 0.8323
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 106,
+          "score": 0.8321
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "question": "Dans quel cas un SI sensible n'a-t-il pas le droit d'accéder à Internet, et sinon quels pare-feux faut-il placer entre lui et le réseau moins sûr ?",
+      "expected_doc_id": "architectures_si_sensibles",
+      "expected_pages": [
+        22,
+        36
+      ],
+      "answerable": true,
+      "rank": null,
+      "ranks": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.8621450066566467,
+      "retrieved": [
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 78,
+          "score": 0.8621
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 71,
+          "score": 0.8573
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 75,
+          "score": 0.8569
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 33,
+          "score": 0.8563
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 27,
+          "score": 0.8537
+        }
+      ]
+    },
+    {
+      "id": "q15",
+      "question": "Comment activer la rotation automatique des clés AWS KMS pour des données sensibles hébergées dans le cloud ?",
+      "expected_doc_id": null,
+      "expected_pages": [],
+      "answerable": false,
+      "rank": null,
+      "ranks": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.8460993766784668,
+      "retrieved": [
+        {
+          "doc_id": "windows10_vbs",
+          "page": 52,
+          "score": 0.8461
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 29,
+          "score": 0.845
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 14,
+          "score": 0.8442
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 122,
+          "score": 0.8419
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 22,
+          "score": 0.8419
+        }
+      ]
+    },
+    {
+      "id": "q16",
+      "question": "Pour durcir un Linux, que veut dire empiler plusieurs barrières indépendantes contre un attaquant ?",
+      "expected_doc_id": "linux_configuration",
+      "expected_pages": [
+        11
+      ],
+      "answerable": true,
+      "rank": 2,
+      "ranks": [
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.8593025207519531,
+      "retrieved": [
+        {
+          "doc_id": "linux_configuration",
+          "page": 8,
+          "score": 0.8593
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 11,
+          "score": 0.857
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 53,
+          "score": 0.8568
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 61,
+          "score": 0.8538
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 30,
+          "score": 0.8536
+        }
+      ]
+    },
+    {
+      "id": "q17",
+      "question": "À quoi sert l'IOMMU sur un serveur Linux et comment obliger le noyau à l'utiliser ?",
+      "expected_doc_id": "linux_configuration",
+      "expected_pages": [
+        18,
+        19
+      ],
+      "answerable": true,
+      "rank": 1,
+      "ranks": [
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "best_score": 0.8861966729164124,
+      "retrieved": [
+        {
+          "doc_id": "linux_configuration",
+          "page": 18,
+          "score": 0.8862
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 19,
+          "score": 0.8709
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 30,
+          "score": 0.8693
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 18,
+          "score": 0.8689
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 18,
+          "score": 0.8661
+        }
+      ]
+    },
+    {
+      "id": "q18",
+      "question": "Plusieurs admins interviennent sur mon serveur Linux : comment retrouver qui a lancé une commande privilégiée ?",
+      "expected_doc_id": "linux_configuration",
+      "expected_pages": [
+        38,
+        39
+      ],
+      "answerable": true,
+      "rank": null,
+      "ranks": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.8550928831100464,
+      "retrieved": [
+        {
+          "doc_id": "linux_configuration",
+          "page": 44,
+          "score": 0.8551
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 60,
+          "score": 0.8512
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 44,
+          "score": 0.8511
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 71,
+          "score": 0.8462
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 49,
+          "score": 0.8456
+        }
+      ]
+    },
+    {
+      "id": "q19",
+      "question": "Je passe une machine sous SELinux avec les réglages conseillés : quelles valeurs mettre dans /etc/selinux/config ?",
+      "expected_doc_id": "linux_configuration",
+      "expected_pages": [
+        49
+      ],
+      "answerable": true,
+      "rank": 1,
+      "ranks": [
+        true,
+        false,
+        true,
+        false,
+        false
+      ],
+      "best_score": 0.8884296417236328,
+      "retrieved": [
+        {
+          "doc_id": "linux_configuration",
+          "page": 49,
+          "score": 0.8884
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 74,
+          "score": 0.87
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 49,
+          "score": 0.8692
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 51,
+          "score": 0.8665
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 21,
+          "score": 0.8649
+        }
+      ]
+    },
+    {
+      "id": "q20",
+      "question": "Quelle valeur mettre dans sysctl.conf pour activer la randomisation de l'espace d'adressage ?",
+      "expected_doc_id": "linux_configuration",
+      "expected_pages": [
+        21
+      ],
+      "answerable": true,
+      "rank": null,
+      "ranks": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.838360607624054,
+      "retrieved": [
+        {
+          "doc_id": "linux_configuration",
+          "page": 18,
+          "score": 0.8384
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 107,
+          "score": 0.8366
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 5,
+          "score": 0.8365
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 25,
+          "score": 0.8365
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 33,
+          "score": 0.8356
+        }
+      ]
+    },
+    {
+      "id": "q21",
+      "question": "Pourquoi le guide d'hygiène déconseille-t-il les comptes partagés du type admin, et quel exemple de nommage donne-t-il pour un administrateur ?",
+      "expected_doc_id": "hygiene_informatique",
+      "expected_pages": [
+        16
+      ],
+      "answerable": true,
+      "rank": 1,
+      "ranks": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.8428685665130615,
+      "retrieved": [
+        {
+          "doc_id": "hygiene_informatique",
+          "page": 16,
+          "score": 0.8429
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 38,
+          "score": 0.8399
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 38,
+          "score": 0.8396
+        },
+        {
+          "doc_id": "hygiene_informatique",
+          "page": 39,
+          "score": 0.8391
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 19,
+          "score": 0.8386
+        }
+      ]
+    },
+    {
+      "id": "q22",
+      "question": "Mon directeur réclame les droits admin sur son PC portable : que répondre et comment gérer un besoin ponctuel ?",
+      "expected_doc_id": "hygiene_informatique",
+      "expected_pages": [
+        41
+      ],
+      "answerable": true,
+      "rank": 1,
+      "ranks": [
+        true,
+        false,
+        true,
+        false,
+        false
+      ],
+      "best_score": 0.8519964218139648,
+      "retrieved": [
+        {
+          "doc_id": "hygiene_informatique",
+          "page": 41,
+          "score": 0.852
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 42,
+          "score": 0.8439
+        },
+        {
+          "doc_id": "hygiene_informatique",
+          "page": 41,
+          "score": 0.842
+        },
+        {
+          "doc_id": "hygiene_informatique",
+          "page": 65,
+          "score": 0.8404
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 56,
+          "score": 0.8402
+        }
+      ]
+    },
+    {
+      "id": "q23",
+      "question": "Que doit contenir au minimum notre politique de backup, et à quelle fréquence s'entraîner à restaurer les données ?",
+      "expected_doc_id": "hygiene_informatique",
+      "expected_pages": [
+        53
+      ],
+      "answerable": true,
+      "rank": 1,
+      "ranks": [
+        true,
+        true,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.8702727556228638,
+      "retrieved": [
+        {
+          "doc_id": "hygiene_informatique",
+          "page": 53,
+          "score": 0.8703
+        },
+        {
+          "doc_id": "hygiene_informatique",
+          "page": 53,
+          "score": 0.8467
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 111,
+          "score": 0.8448
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 6,
+          "score": 0.8447
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 32,
+          "score": 0.8409
+        }
+      ]
+    },
+    {
+      "id": "q24",
+      "question": "Comment organiser les comptes de mes admins et de mes utilisateurs, et qui doit avoir les droits d'administration sur les postes de travail ?",
+      "expected_doc_id": "hygiene_informatique",
+      "expected_pages": [
+        16,
+        41
+      ],
+      "answerable": true,
+      "rank": 1,
+      "ranks": [
+        true,
+        false,
+        false,
+        true,
+        false
+      ],
+      "best_score": 0.848834216594696,
+      "retrieved": [
+        {
+          "doc_id": "hygiene_informatique",
+          "page": 41,
+          "score": 0.8488
+        },
+        {
+          "doc_id": "windows10_vbs",
+          "page": 33,
+          "score": 0.8409
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 38,
+          "score": 0.8404
+        },
+        {
+          "doc_id": "hygiene_informatique",
+          "page": 16,
+          "score": 0.8402
+        },
+        {
+          "doc_id": "linux_configuration",
+          "page": 38,
+          "score": 0.8401
+        }
+      ]
+    },
+    {
+      "id": "q25",
+      "question": "Sous NIS2, sous quel délai faut-il notifier un incident de sécurité à l'autorité ?",
+      "expected_doc_id": null,
+      "expected_pages": [],
+      "answerable": false,
+      "rank": null,
+      "ranks": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "best_score": 0.856191873550415,
+      "retrieved": [
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 88,
+          "score": 0.8562
+        },
+        {
+          "doc_id": "architectures_si_sensibles",
+          "page": 87,
+          "score": 0.8482
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 99,
+          "score": 0.8441
+        },
+        {
+          "doc_id": "hygiene_informatique",
+          "page": 56,
+          "score": 0.8418
+        },
+        {
+          "doc_id": "systemes_industriels",
+          "page": 53,
+          "score": 0.8397
+        }
+      ]
+    }
+  ]
+}

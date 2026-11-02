@@ -153,7 +153,8 @@ answer.
 ├── requirements.txt
 ├── docs/
 │   ├── corpus.md        document list + licences
-│   └── decisions.md     decision log
+│   ├── decisions.md     decision log
+│   └── eval-reading-plan.md  passages behind the reference questions
 ├── src/rag_assistant/
 │   ├── config.py
 │   ├── extract.py
