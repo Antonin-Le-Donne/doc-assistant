@@ -1,0 +1,10 @@
+# Unpinned on purpose: pin exact versions (pip freeze) once evening 1 works.
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+pymupdf
+sentence-transformers
+chromadb
+httpx
+pytest
