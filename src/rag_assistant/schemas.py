@@ -1,4 +1,4 @@
-"""Pydantic models for the API contract. See SPEC.md §7."""
+"""Pydantic models for the API contract."""
 
 from pydantic import BaseModel, ConfigDict, Field
 

@@ -1,4 +1,4 @@
-"""Stage 1: PDF → pages with metadata. See SPEC.md §5 (Page)."""
+"""Stage 1: PDF → pages with metadata."""
 
 import re
 import unicodedata
@@ -9,8 +9,7 @@ from typing import Iterator, TypedDict
 import pymupdf
 
 HEADING_MIN_RATIO = 1.35  # font size relative to body text
-# Callouts and recommendation titles are set in large fonts too: real headings are numbered.
-# A lone "I" is excluded: the Linux guide uses it as a hardening level tag (M, I, R, E).
+# Callouts also use large fonts, but only headings are numbered. A lone "I" is a level tag.
 NUMBERED_HEADING = re.compile(r"^(\d+(\.\d+)*|II|III|IV|V|VI|VII|VIII|IX|X|Annexe\s+\w+)(\s|$)")
 MIN_REPEATED_KEY_LENGTH = 12  # keeps short per-measure labels such as "/Standard"
 
@@ -30,12 +29,7 @@ def make_doc_id(pdf_path: Path) -> str:
 
 
 def extract_pages(pdf_path: Path) -> Iterator[Page]:
-    """Yield one Page per PDF page, 1-based page numbers.
-
-    Section detection: track the most recent heading seen so far
-    (headings are usually lines in a larger or bold font). A page holding
-    several headings is labelled with its last one.
-    """
+    """Yield one Page per PDF page (1-based); `section` is the last heading seen so far."""
     repeated_lines = find_repeated_lines(pdf_path)
     with pymupdf.open(pdf_path) as doc:
         doc_id = make_doc_id(pdf_path)
@@ -61,12 +55,11 @@ def clean_text(text: str, repeated_lines: set[str]) -> str:
     """Remove repeated headers/footers and fix broken hyphenation."""
     text = unicodedata.normalize("NFKC", text)
     kept = [line for line in text.split("\n") if _line_key(line) not in repeated_lines or not line.strip()]
-    # Page numbers sit at the very top or bottom; measure numbers never do.
+    # Only page numbers sit at the very top or bottom.
     while kept and (kept[0].strip().isdigit() or not kept[0].strip()):
         kept.pop(0)
     while kept and (kept[-1].strip().isdigit() or not kept[-1].strip()):
         kept.pop()
-    # Decorative lines: ". " in some guides, and ">>" bullets alone on their line.
     kept = [line for line in kept if line.strip() != "."]
     cleaned = "\n".join(kept)
     cleaned = re.sub(r"^\s*>>\s*\n+\s*", "- ", cleaned, flags=re.M)
@@ -92,7 +85,7 @@ def find_repeated_lines(pdf_path: Path, min_share: float = 0.5) -> set[str]:
 
 
 def _line_key(line: str) -> str:
-    """Comparison key that ignores page numbers and punctuation ("8 – TITLE" = "TITLE – 9")."""
+    """Comparison key ignoring digits and punctuation ("8 – TITLE" = "TITLE – 9")."""
     return re.sub(r"[\W\d_]+", " ", unicodedata.normalize("NFKC", line)).strip().casefold()
 
 
@@ -115,7 +108,7 @@ def _page_lines(pdf_page) -> list[list[tuple[str, float]]]:
 
 
 def _find_headings(blocks, body_size: float, repeated_lines: set[str]) -> list[str]:
-    """Headings of a page: a numbered large line ("2.1") plus the large lines after it (its title)."""
+    """Headings of a page: a large numbered line plus the large lines after it."""
     headings = []
     current: list[str] = []
     for block in blocks:
@@ -123,7 +116,6 @@ def _find_headings(blocks, body_size: float, repeated_lines: set[str]) -> list[s
             text = text.strip()
             is_large = size >= body_size * HEADING_MIN_RATIO and _line_key(text) not in repeated_lines
             if is_large and NUMBERED_HEADING.match(text):
-                # A new number closes the heading before it ("2 Title" then "2.1 Title").
                 if len(current) > 1:
                     headings.append(" ".join(current))
                     current = []

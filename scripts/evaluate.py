@@ -1,4 +1,4 @@
-"""Retrieval evaluation on eval/questions.jsonl. See SPEC.md §8.
+"""Retrieval evaluation on eval/questions.jsonl.
 
 Usage: python scripts/evaluate.py [--top-k 5] [--label baseline]
 Writes eval/results/<label>.json (per-question detail + aggregate metrics).
@@ -52,8 +52,7 @@ def main() -> None:
     lines = (EVAL_DIR / "questions.jsonl").read_text(encoding="utf-8").splitlines()
     questions = [json.loads(line) for line in lines if line.strip()]
 
-    # Unanswerable questions are retrieved too: their scores inform a future threshold,
-    # but only answerable ones count for hit@k and MRR.
+    # Unanswerable questions only record scores: hit@k and MRR ignore them.
     details = []
     for question in questions:
         chunks = retrieve(question["question"], index, model, top_k)

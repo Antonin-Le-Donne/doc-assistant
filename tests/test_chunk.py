@@ -1,4 +1,4 @@
-"""Chunking rules from docs/decisions.md: hard size limit, progress, one page per chunk."""
+"""Chunking rules: hard size limit, progress, one page per chunk."""
 
 import pytest
 

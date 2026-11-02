@@ -6,7 +6,7 @@ from typing import Iterable
 from rag_assistant.chunk import Chunk
 
 COLLECTION_NAME = "chunks"
-PASSAGE_PREFIX = "passage: "  # asymmetric E5 prefixes, see docs/decisions.md
+PASSAGE_PREFIX = "passage: "  # expected by E5 models
 EMBEDDING_BATCH_SIZE = 32
 WRITE_BATCH_SIZE = 500
 
@@ -19,11 +19,7 @@ def load_embedding_model(model_name: str):
 
 
 def build_index(chunks: Iterable[Chunk], model, index_dir: Path, model_name: str) -> int:
-    """Embed every chunk and store vectors + metadata + text. Return the chunk count.
-
-    Store the embedding model name alongside the index: querying an index
-    with a different model must raise an error instead of returning garbage.
-    """
+    """Rebuild the index with the model name in its metadata. Return the chunk count."""
     client = _client(index_dir)
     if COLLECTION_NAME in _collection_names(client):
         client.delete_collection(COLLECTION_NAME)
@@ -50,10 +46,7 @@ def build_index(chunks: Iterable[Chunk], model, index_dir: Path, model_name: str
 
 
 def open_index(index_dir: Path, expected_model_name: str):
-    """Open an existing index and check it was built with `expected_model_name`.
-
-    Raises FileNotFoundError when no index exists, ValueError on a model mismatch.
-    """
+    """Open the index; raise FileNotFoundError if absent, ValueError on a model mismatch."""
     client = _client(index_dir)
     if COLLECTION_NAME not in _collection_names(client):
         raise FileNotFoundError(f"no index in {index_dir}: run scripts/ingest.py first")
@@ -80,7 +73,7 @@ def _collection_names(client) -> list[str]:
 
 
 def _metadata(chunk: Chunk) -> dict:
-    # Chroma rejects None values: a missing section is simply left out.
+    # Chroma rejects None values.
     metadata = {
         "doc_id": chunk["doc_id"],
         "doc_title": chunk["doc_title"],

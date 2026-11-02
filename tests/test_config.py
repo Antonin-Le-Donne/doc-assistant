@@ -1,4 +1,4 @@
-"""Settings: defaults from SPEC.md §6 and loud failures on invalid values."""
+"""Settings: defaults and loud failures on invalid values."""
 
 import pytest
 

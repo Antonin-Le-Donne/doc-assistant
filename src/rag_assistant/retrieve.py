@@ -2,7 +2,7 @@
 
 from typing import TypedDict
 
-QUERY_PREFIX = "query: "  # asymmetric E5 prefixes, see docs/decisions.md
+QUERY_PREFIX = "query: "  # expected by E5 models
 
 
 class RetrievedChunk(TypedDict):
@@ -12,7 +12,7 @@ class RetrievedChunk(TypedDict):
     section: str | None
     page: int
     text: str
-    score: float  # cosine similarity: 1 - cosine distance, in [-1, 1]; higher = more similar
+    score: float  # cosine similarity (1 - distance)
 
 
 def retrieve(question: str, index, model, top_k: int) -> list[RetrievedChunk]:

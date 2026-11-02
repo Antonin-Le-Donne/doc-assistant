@@ -1,4 +1,4 @@
-"""Settings loaded once from the environment (.env). See SPEC.md §6."""
+"""Settings loaded once from the environment (.env)."""
 
 import os
 from dataclasses import dataclass
@@ -53,11 +53,9 @@ def _read_int(name: str, default: int) -> int:
 
 
 def load_settings() -> Settings:
-    """Read .env and environment variables, validate them, return Settings.
+    """Read and validate the settings; raise ValueError on an invalid value.
 
-    Must fail loudly (clear error message) when a required value is missing
-    or invalid, e.g. chunk_overlap >= chunk_size, unknown llm_provider.
-    LLM credentials are checked by get_llm: ingestion and evaluation need no LLM.
+    LLM model names are checked by get_llm: ingestion and evaluation need no LLM.
     """
     load_dotenv()
     settings = Settings(

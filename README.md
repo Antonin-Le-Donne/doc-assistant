@@ -1,7 +1,7 @@
 # RAG Doc Assistant
 
-> **Work in progress.** Retrieval is measured below. The `/ask` endpoint has only
-> been tested with a fake LLM so far, not with a real model.
+> **Work in progress.** Retrieval is measured below. The `/ask` endpoint has been
+> tried on 9 questions with a local model; answer quality is not measured yet.
 
 A question-answering API over a corpus of technical PDF documents, built with
 retrieval-augmented generation (RAG). Every answer cites the document, section
@@ -44,7 +44,7 @@ Ollama or an OpenAI-compatible LLM API · pytest
 | PDF extraction with metadata | ✅ |
 | Chunking + indexing | ✅ |
 | Retrieval evaluation (hit@k, MRR) | ✅ |
-| `/ask` endpoint with cited sources | 🟡 tested with a fake LLM only |
+| `/ask` endpoint with cited sources | 🟡 works, answer quality not measured |
 | Configuration comparison | ⏳ |
 
 ## Results

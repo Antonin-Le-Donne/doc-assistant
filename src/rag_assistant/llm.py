@@ -7,7 +7,7 @@ import httpx
 from rag_assistant.retrieve import RetrievedChunk
 
 REFUSAL_MARKER = "[SANS_REPONSE]"
-LLM_TIMEOUT_SECONDS = 300.0  # local models on modest hardware can be slow
+LLM_TIMEOUT_SECONDS = 300.0  # local models can be slow
 
 
 class LLM(Protocol):
@@ -40,10 +40,7 @@ class OllamaLLM:
 
 
 class ApiLLM:
-    """Any OpenAI-compatible chat API: LM Studio, OpenRouter, Hugging Face, OpenAI.
-
-    The key comes from settings, never hard-coded, and local servers need none.
-    """
+    """Any OpenAI-compatible chat API. Local servers need no key."""
 
     def __init__(self, model: str, api_key: str, base_url: str) -> None:
         self.model = model
@@ -80,12 +77,7 @@ def get_llm(settings) -> LLM:
 
 
 def build_prompt(question: str, chunks: list[RetrievedChunk]) -> str:
-    """Prompt that forces answers grounded in the chunks, with numbered sources.
-
-    The model must: answer only from the provided context, cite sources by
-    number, and reply with an explicit refusal marker when the context does
-    not contain the answer (so `answered` can be set to False).
-    """
+    """Prompt asking for an answer from the chunks only, or the refusal marker."""
     context = "\n\n".join(
         f"[{number}] {chunk['doc_title']} — section : {chunk['section'] or 'inconnue'} — page {chunk['page']}\n"
         f"{chunk['text']}"

@@ -1,6 +1,5 @@
-"""Download the corpus PDFs listed in docs/corpus.md into data/raw/.
+"""Download the corpus PDFs into data/raw/.
 
-The PDFs stay local (data/ is git-ignored), whatever their licence allows.
 Usage: python scripts/download_corpus.py
 """
 
@@ -12,7 +11,6 @@ from rag_assistant.config import load_settings
 
 BASE_URL = "https://messervices.cyber.gouv.fr/documents-guides"
 
-# Direct PDF URLs only (not web pages). Keep in sync with docs/corpus.md.
 CORPUS_URLS: dict[str, str] = {
     "windows10_vbs.pdf": f"{BASE_URL}/np_securisation_windows10_securite_reposant_sur_la_virtualisation_v1.pdf",
     "systemes_industriels.pdf": f"{BASE_URL}/Guide_Systemes_industriels__Mesures_detaillees_v2.pdf",

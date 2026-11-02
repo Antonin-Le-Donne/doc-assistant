@@ -1,4 +1,4 @@
-"""FastAPI app: GET /health, POST /ask. See SPEC.md §7.
+"""FastAPI app: GET /health, POST /ask.
 
 Run (from the repo root, venv active):
     uvicorn rag_assistant.api:app --reload --app-dir src
@@ -32,7 +32,7 @@ async def lifespan(app: FastAPI):
         app.state.index = open_index(settings.index_dir, settings.embedding_model)
         app.state.model = load_embedding_model(settings.embedding_model)
     except FileNotFoundError as error:
-        # /health reports it; a model mismatch (ValueError) still stops the startup.
+        # Reported by /health; a model mismatch (ValueError) still stops the startup.
         logger.error("%s", error)
         app.state.index = None
         app.state.model = None
@@ -60,8 +60,7 @@ def health(request: Request) -> HealthResponse:
 def ask(body: AskRequest, request: Request) -> AskResponse:
     """Retrieve, build the prompt, generate, map chunks to Sources.
 
-    There is no relevance threshold yet (docs/decisions.md): the LLM's refusal
-    marker decides, and scores are logged so a threshold can be measured later.
+    No relevance threshold yet: the LLM's refusal marker decides, and scores are logged.
     """
     state = request.app.state
     if state.index is None:
@@ -82,7 +81,7 @@ def ask(body: AskRequest, request: Request) -> AskResponse:
     if is_refusal(answer):
         logger.info("ask refused best_score=%.3f", chunks[0]["score"])
         return AskResponse(answer=REFUSAL_ANSWER, sources=[], answered=False)
-    # All retrieved chunks are returned, in order, so "[n]" in the answer maps to sources[n-1].
+    # Same order as the prompt: "[n]" in the answer is sources[n-1].
     return AskResponse(answer=answer.strip(), sources=[_to_source(chunk) for chunk in chunks], answered=True)
 
 
